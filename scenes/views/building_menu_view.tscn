@@ -1,0 +1,122 @@
+[gd_scene load_steps=20 format=3 uid="uid://d7tmev6j32p0"]
+
+[ext_resource type="Script" path="res://scenes/views/building_menu_view.gd" id="1_3vtg8"]
+[ext_resource type="Resource" uid="uid://btm2he68uwbqv" path="res://resources/building_data/destroyer.tres" id="2_3ub1w"]
+[ext_resource type="Resource" uid="uid://d3xse8lslhkdb" path="res://resources/building_data/expander.tres" id="7_xqj8c"]
+[ext_resource type="Resource" uid="uid://xkq5tyjgop0d" path="res://resources/building_data/shrinker.tres" id="8_e2hqk"]
+[ext_resource type="Resource" uid="uid://bpf6yfogi38l2" path="res://resources/building_data/horizontal_squisher.tres" id="9_k55wc"]
+[ext_resource type="Resource" uid="uid://ks0w5ieo4m6n" path="res://resources/building_data/counter_clockwise_rotator.tres" id="10_m7o57"]
+[ext_resource type="Resource" uid="uid://dym57yuulhxfn" path="res://resources/building_data/vertical_squisher.tres" id="10_sepo6"]
+[ext_resource type="Resource" uid="uid://dd523mg55fi2e" path="res://resources/building_data/clockwise_rotator.tres" id="11_hv8v5"]
+[ext_resource type="Texture2D" uid="uid://du5dkosh2jtiu" path="res://sprites/tool_menu_button/tool_menu_button16.png" id="11_ifmaa"]
+[ext_resource type="Texture2D" uid="uid://c8reo730ju6cn" path="res://sprites/tool_menu_button/tool_menu_button12.png" id="12_3ntt4"]
+[ext_resource type="Resource" uid="uid://cpe32cl33yovj" path="res://resources/building_data/splitter.tres" id="12_jpfj5"]
+[ext_resource type="Resource" uid="uid://caplp7o2e7d2g" path="res://resources/building_data/stacker.tres" id="13_145wh"]
+[ext_resource type="Script" path="res://addons/foolish_godot/scripts/resources/transition_data.gd" id="13_xx167"]
+[ext_resource type="Texture2D" uid="uid://ru8snk64gw58" path="res://sprites/ui.png" id="14_mmpgc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_04sqq"]
+
+[sub_resource type="Resource" id="Resource_lbk0w"]
+script = ExtResource("13_xx167")
+duration = 1.0
+initial_position = Vector2(-150, 0)
+target_position = Vector2(0, 0)
+initial_color = Color(1, 1, 1, 1)
+target_color = Color(1, 1, 1, 1)
+target_visibility = true
+
+[sub_resource type="Resource" id="Resource_blr12"]
+script = ExtResource("13_xx167")
+duration = 1.0
+initial_position = Vector2(0, 0)
+target_position = Vector2(-150, 0)
+initial_color = Color(1, 1, 1, 1)
+target_color = Color(1, 1, 1, 1)
+target_visibility = false
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jqwg2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ox4hi"]
+atlas = ExtResource("14_mmpgc")
+region = Rect2(6, 2, 4, 3)
+
+[node name="BuildingMenuView" type="Panel" node_paths=PackedStringArray("position_control")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_04sqq")
+script = ExtResource("1_3vtg8")
+building_datas = Array[Resource("res://scripts/resources/building_data.gd")]([ExtResource("7_xqj8c"), ExtResource("8_e2hqk"), ExtResource("10_sepo6"), ExtResource("9_k55wc"), ExtResource("10_m7o57"), ExtResource("11_hv8v5"), ExtResource("12_jpfj5"), ExtResource("13_145wh")])
+destroy_data = ExtResource("2_3ub1w")
+lock_texture = ExtResource("11_ifmaa")
+reset_texture = ExtResource("12_3ntt4")
+position_control = NodePath("PositionControl")
+visible_transition = SubResource("Resource_lbk0w")
+invisible_transition = SubResource("Resource_blr12")
+
+[node name="PositionControl" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PositionControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -12.0
+offset_right = 8.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jqwg2")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PositionControl/PanelContainer"]
+layout_mode = 2
+texture = ExtResource("14_mmpgc")
+region_rect = Rect2(7, 0, 9, 16)
+patch_margin_left = 2
+patch_margin_top = 9
+patch_margin_right = 9
+patch_margin_bottom = 9
+
+[node name="MarginContainer" type="MarginContainer" parent="PositionControl/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PositionControl/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ButtonHolder" type="GridContainer" parent="PositionControl/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="PositionControl/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_ox4hi")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PositionControl/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8

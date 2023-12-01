@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://drfqsfi02rwnn"]
+
+[ext_resource type="SpriteFrames" uid="uid://b6jw36071ktc7" path="res://sprites/conveyor_belt_sprite_frame.tres" id="1_oru63"]
+[ext_resource type="Script" path="res://scenes/conveyor_belt.gd" id="2_yujn1"]
+
+[node name="ConveyorBelt" type="AnimatedSprite2D"]
+sprite_frames = ExtResource("1_oru63")
+animation = &"straight"
+autoplay = "straight"
+script = ExtResource("2_yujn1")

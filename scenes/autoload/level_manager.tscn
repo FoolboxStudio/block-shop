@@ -1,0 +1,31 @@
+[gd_scene load_steps=25 format=3 uid="uid://bs17nm2j4ixuj"]
+
+[ext_resource type="Script" path="res://scenes/autoload/level_manager.gd" id="1_5q52c"]
+[ext_resource type="Resource" uid="uid://cvuqlpxiebv1y" path="res://resources/level_data/tutorial/tutorial_level_conveyor.tres" id="2_531vi"]
+[ext_resource type="Resource" uid="uid://b677jdp1eleqr" path="res://resources/level_data/easy/easy_level_big_black_six.tres" id="2_giubm"]
+[ext_resource type="Resource" uid="uid://cufnpaywbxoyo" path="res://resources/level_data/easy/easy_level_big_white_cross.tres" id="3_0t5mk"]
+[ext_resource type="Resource" uid="uid://c7l5bstmtkct" path="res://resources/level_data/tutorial/tutorial_level_expand_shrink.tres" id="3_x2ugu"]
+[ext_resource type="Resource" uid="uid://d31dx8aj75fk6" path="res://resources/level_data/tutorial/tutorial_level_squisher.tres" id="4_4mg3g"]
+[ext_resource type="Resource" uid="uid://8lrx4cx6fksd" path="res://resources/level_data/easy/easy_level_small_black_donut.tres" id="4_k046l"]
+[ext_resource type="Resource" uid="uid://c02yeiidx6f0a" path="res://resources/level_data/easy/easy_level_big_black_cell.tres" id="5_d6wua"]
+[ext_resource type="Resource" uid="uid://2ok1n70l41k5" path="res://resources/level_data/tutorial/tutorial_level_rotator.tres" id="5_f1m6y"]
+[ext_resource type="Resource" uid="uid://b1xi4iho6ero7" path="res://resources/level_data/easy/easy_level_small_white_bread_sandwich.tres" id="5_gakfi"]
+[ext_resource type="Resource" uid="uid://bbg0oxv3p8m02" path="res://resources/level_data/tutorial/tutorial_level_splitter.tres" id="6_677dy"]
+[ext_resource type="Resource" uid="uid://xeap5gbvrb2k" path="res://resources/level_data/tutorial/tutorial_level_stacker.tres" id="7_jxv7o"]
+[ext_resource type="Resource" uid="uid://bd6fy3pkpgbtw" path="res://resources/level_data/medium/medium_level_big_white_H.tres" id="7_ly8nl"]
+[ext_resource type="Resource" uid="uid://chjedjkj2eatl" path="res://resources/level_data/hard/hard_level_small_kitchen_tile.tres" id="7_nf73c"]
+[ext_resource type="Resource" uid="uid://dcuxqwfpj8rwp" path="res://resources/level_data/tutorial/tutorial_level_big_white_donut.tres" id="8_dpdb3"]
+[ext_resource type="Resource" uid="uid://ch4b1ayjpijwk" path="res://resources/level_data/medium/medium_level_small_white_six.tres" id="8_h3eur"]
+[ext_resource type="Resource" uid="uid://bqd7c5817vxh2" path="res://resources/level_data/medium/medium_level_donutception.tres" id="9_45etm"]
+[ext_resource type="Resource" uid="uid://k5kkol7mpknh" path="res://resources/level_data/easy/easy_level_big_black_white_cross.tres" id="9_kydqm"]
+[ext_resource type="Resource" uid="uid://cwlnsjrn0jd05" path="res://resources/level_data/easy/easy_level_small_black_bread_sandwich.tres" id="10_22to8"]
+[ext_resource type="Resource" uid="uid://bgjk3u724l5xs" path="res://resources/level_data/easy/easy_level_3_way_splitter.tres" id="10_c1wfm"]
+[ext_resource type="Resource" uid="uid://6kosculkvy64" path="res://resources/level_data/medium/medium_level_opposite_donuts.tres" id="10_dcnur"]
+[ext_resource type="Resource" uid="uid://rdagijmpu4w2" path="res://resources/level_data/easy/easy_level_small_black_bread_sandwich_2.tres" id="11_47xcc"]
+[ext_resource type="Resource" uid="uid://cfkaeshrhr24n" path="res://resources/level_data/easy/easy_level_big_black_cross.tres" id="11_ejof5"]
+[ext_resource type="Resource" uid="uid://ddxxjaupm1b2v" path="res://resources/level_data/easy/easy_level_big_black_white_cell.tres" id="15_40hah"]
+
+[node name="LevelManager" type="Node"]
+script = ExtResource("1_5q52c")
+level_index_start = 7
+level_list = Array[Resource("res://scripts/resources/level_data.gd")]([ExtResource("2_531vi"), ExtResource("3_x2ugu"), ExtResource("4_4mg3g"), ExtResource("5_f1m6y"), ExtResource("6_677dy"), ExtResource("7_jxv7o"), ExtResource("8_dpdb3"), ExtResource("9_kydqm"), ExtResource("10_22to8"), ExtResource("10_c1wfm"), ExtResource("11_ejof5"), ExtResource("11_47xcc"), ExtResource("2_giubm"), ExtResource("15_40hah"), ExtResource("5_d6wua"), ExtResource("3_0t5mk"), ExtResource("4_k046l"), ExtResource("5_gakfi"), ExtResource("7_ly8nl"), ExtResource("9_45etm"), ExtResource("10_dcnur"), ExtResource("8_h3eur"), ExtResource("7_nf73c")])

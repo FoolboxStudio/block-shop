@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BuildingData" load_steps=3 format=3 uid="uid://byjj5fqdjlwpp"]
+
+[ext_resource type="Script" path="res://scripts/resources/building_data.gd" id="1_w0as0"]
+[ext_resource type="Texture2D" uid="uid://dhlp1fful283h" path="res://sprites/cube_resource/cube_resources7.png" id="2_ihxlh"]
+
+[resource]
+script = ExtResource("1_w0as0")
+building_type = 2
+texture_2d = ExtResource("2_ihxlh")
+keep_original_color = true
+coming_from_amount_allowed = 0
+going_toward_amount_allowed = 1
+no_in_line_inputs = false
+can_be_overwritten = true

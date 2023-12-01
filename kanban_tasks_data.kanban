@@ -1,0 +1,609 @@
+{
+	"categories": [
+		{
+			"uuid": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"title": "Task",
+			"color": "70bafa"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "b52768a9-f036-430f-aa97-7d4f54c59910",
+			"title": "Backburner",
+			"tasks": [
+				"0fe5a490-ae36-4e88-964f-46e6afc50f4f",
+				"5bebea4a-bd2c-42a6-a265-b1ba01340948",
+				"bdbc7c39-3d59-4aa6-a2aa-3282664e7580",
+				"ed9f9994-80d3-4534-8f3d-82a9fa2b9750",
+				"645a76ea-9de1-47c5-8834-ec44fcedfac2",
+				"fa4ef4ed-7849-442d-a41b-0f4160ee5191",
+				"aa0f44a0-2b8f-456b-b2f9-d8345265005c"
+			]
+		},
+		{
+			"uuid": "08db84c4-363f-4e9f-a88b-28403464d3c2",
+			"title": "To Do",
+			"tasks": [
+				"133b5525-1ce6-4eaf-8c56-e652ed7977d9"
+			]
+		},
+		{
+			"uuid": "fb035e58-6426-4621-8995-717890e56bc2",
+			"title": "Doing",
+			"tasks": []
+		},
+		{
+			"uuid": "5658d053-659a-4a76-810d-66874c75cd06",
+			"title": "Done",
+			"tasks": [
+				"30118174-4eea-43c8-ac53-05a8af5e796c",
+				"ad5fd1a1-5408-461d-b595-e05bba5ffa48",
+				"f9ac4730-6785-470e-bf2c-053e2210ef56",
+				"3092543f-c282-409b-ac9b-d576518f764c",
+				"8d42bbe7-25f2-4dad-b7c0-aaa4a5316045",
+				"b2379299-40e7-421d-9f0e-af1a9d657484",
+				"c8ecf2d3-e110-4887-85f1-2de77212656f",
+				"8a3fb97e-c825-495d-b1e2-3de6ba60b5fc",
+				"15982841-ebb6-4386-9d6c-e1d11da2c398",
+				"5c81a03d-cf9f-4083-824f-29719d1cfcf9",
+				"ec9a07a7-0c8b-4faf-837a-699fc259e1e9",
+				"be18041b-98d1-444f-9add-c8c544e61b2a",
+				"f3668966-e5fb-4060-abfe-8c05e194e1f0",
+				"ae04e537-a95f-4c67-8cc2-00211403ffc1",
+				"763d81e6-3d07-4660-b4d1-68090df9930a",
+				"848ba58f-e916-4126-9a46-b08e780ff5c2",
+				"076379ed-870e-4689-8d39-986fb68535ae",
+				"8a1e6aa3-4f8e-4987-8dc8-b059db939bb0",
+				"669e637c-8cab-4b9a-adc1-62afe4fe717b",
+				"ab2c5b84-8834-48b1-ad94-b6b53ccb1bfe",
+				"dc00a89e-b2cf-4055-90a0-6794f38348ee",
+				"d3c412a8-8b22-4efa-a12d-d2f10fdaa683",
+				"4ee9207f-68c1-4329-a8a4-5e1e930931b8",
+				"cd26e751-f14c-4768-ac22-b12467053ac0",
+				"908320fa-3e6f-4dd3-a5b7-bd26b3343d0c",
+				"5311b6fd-6fcf-45f0-8b71-ed9bad7e9e9f",
+				"aafa993d-749d-475c-98f0-74bffb2c44a8",
+				"31531d8c-42c6-44a3-807d-ebd96f596360",
+				"88fd0fd8-83c0-4659-b689-233bbaa6768c",
+				"8554452c-33e4-46ab-83fd-6f5505cba8ad",
+				"d83899e4-14b7-4d7d-b308-ef9bd6fdd025",
+				"e8d4bb26-4812-47df-878d-9192ad8fb632",
+				"353fc8f8-6191-4820-a3d0-35d982d6e61a",
+				"c1c07a7c-e130-4624-b842-b6626815d123",
+				"c81a354e-d983-438c-a012-7519825558ea",
+				"c76a5f8e-936e-4a3f-804f-fa76405a0a39"
+			]
+		}
+	],
+	"tasks": [
+		{
+			"uuid": "15982841-ebb6-4386-9d6c-e1d11da2c398",
+			"title": "Remember Feidry to tells us about the game they're gonna work on",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": []
+		},
+		{
+			"uuid": "e8d4bb26-4812-47df-878d-9192ad8fb632",
+			"title": "Make Stacker not take in new Cube when there isn't space in the output",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": []
+		},
+		{
+			"uuid": "353fc8f8-6191-4820-a3d0-35d982d6e61a",
+			"title": "Make Splitter split alternatively, not randomly",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": []
+		},
+		{
+			"uuid": "c1c07a7c-e130-4624-b842-b6626815d123",
+			"title": "Make input and output doors of most machine need to be inline",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": []
+		},
+		{
+			"uuid": "d83899e4-14b7-4d7d-b308-ef9bd6fdd025",
+			"title": "Make Stacker not crash if there's no exit door",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": []
+		},
+		{
+			"uuid": "645a76ea-9de1-47c5-8834-ec44fcedfac2",
+			"title": "Add logic to have superimposed color mixing together (Kinda like stain glass that would be on top of eachother)",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": []
+		},
+		{
+			"uuid": "c81a354e-d983-438c-a012-7519825558ea",
+			"title": "Make most Machine not activate multiple time if the output is blocked",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": []
+		},
+		{
+			"uuid": "c76a5f8e-936e-4a3f-804f-fa76405a0a39",
+			"title": "Make animation of conveyor work with doors correctly",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": []
+		},
+		{
+			"uuid": "bdbc7c39-3d59-4aa6-a2aa-3282664e7580",
+			"title": "Add logic for Squisher to align with the direction of input and output door",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": []
+		},
+		{
+			"uuid": "ab2c5b84-8834-48b1-ad94-b6b53ccb1bfe",
+			"title": "Add particle system for level transition",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": [
+				{
+					"details": "Tweak Multiple particle systems to have different spritesheet, speed and start/end time",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "aafa993d-749d-475c-98f0-74bffb2c44a8",
+			"title": "Create save system for level",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": [
+				{
+					"details": "Add way to draw where buildings can be drawn (tilemap?)",
+					"done": true
+				},
+				{
+					"details": "Make system that can save current configuration of tile (current_building_data, going_toward and coming_from)",
+					"done": true
+				},
+				{
+					"details": "Save level configuration to a resource?",
+					"done": true
+				},
+				{
+					"details": "Save Resource to a json?",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "8554452c-33e4-46ab-83fd-6f5505cba8ad",
+			"title": "Create reset button for level",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": []
+		},
+		{
+			"uuid": "908320fa-3e6f-4dd3-a5b7-bd26b3343d0c",
+			"title": "Change conveyor placement logic",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": [
+				{
+					"details": "Conveyor tool should be default tool. Activates by default when clicking on machine",
+					"done": true
+				},
+				{
+					"details": "Make it so only in-line tiles can be drawn on",
+					"done": true
+				},
+				{
+					"details": "Make it so the conveyor would affect multiple tiles if moving mouse too fast",
+					"done": true
+				},
+				{
+					"details": "Make it so conveyor disapear if mouse is moved back on existing conveyor",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "cd26e751-f14c-4768-ac22-b12467053ac0",
+			"title": "Change Machine placement logic",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": [
+				{
+					"details": "Use drag and drop from the menu to place machine",
+					"done": true
+				},
+				{
+					"details": "Use drag and drop on existing machine to switch it",
+					"done": true
+				},
+				{
+					"details": "Use hotkey plus click on screen to place machine",
+					"done": true
+				},
+				{
+					"details": "Add option of selecting machine to switch to other machine",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "31531d8c-42c6-44a3-807d-ebd96f596360",
+			"title": "Add logic so that some buildings can't be overwritten",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": [
+				{
+					"details": "Tie logic of this with the save system",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "5311b6fd-6fcf-45f0-8b71-ed9bad7e9e9f",
+			"title": "Make Input Manager able to receive Chain of Responsability controller",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": [
+				{
+					"details": "Allow obecjts to inject their controller into the Input Manager",
+					"done": true
+				},
+				{
+					"details": "Have a controller for the game scene",
+					"done": true
+				},
+				{
+					"details": "Have a controller for the reset menu",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "ed9f9994-80d3-4534-8f3d-82a9fa2b9750",
+			"title": "Add tick for the movement and transformation of Cubes",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": [
+				{
+					"details": "Make everything move on the same tick (move only one node that would contain all the cube?)",
+					"done": false
+				},
+				{
+					"details": "Transform cubes based on the same amount of tick time (45 ticks? 48 fps ticks?)",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "88fd0fd8-83c0-4659-b689-233bbaa6768c",
+			"title": "Fix bug where initial resource change to a different resource",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": []
+		},
+		{
+			"uuid": "4ee9207f-68c1-4329-a8a4-5e1e930931b8",
+			"title": "Add Title View",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": []
+		},
+		{
+			"uuid": "d3c412a8-8b22-4efa-a12d-d2f10fdaa683",
+			"title": "Add system to transition between Title View and Game View",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": []
+		},
+		{
+			"uuid": "5c81a03d-cf9f-4083-824f-29719d1cfcf9",
+			"title": "Finish Option View",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": []
+		},
+		{
+			"uuid": "5bebea4a-bd2c-42a6-a265-b1ba01340948",
+			"title": "Add Shadow Building when clicking to construct",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": []
+		},
+		{
+			"uuid": "fa4ef4ed-7849-442d-a41b-0f4160ee5191",
+			"title": "Add Logic for Slicer Building",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": []
+		},
+		{
+			"uuid": "aa0f44a0-2b8f-456b-b2f9-d8345265005c",
+			"title": "Add Logic for Assembler Building",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": []
+		},
+		{
+			"uuid": "8a3fb97e-c825-495d-b1e2-3de6ba60b5fc",
+			"title": "Bug Fixes",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": [
+				{
+					"details": "Multiple Exit triggering level clear when only one is done",
+					"done": true
+				},
+				{
+					"details": "Shrinker Shrink more then Medium Size",
+					"done": true
+				},
+				{
+					"details": "Expander sometime Expander more than Big Size",
+					"done": true
+				},
+				{
+					"details": "Title Screen shapes move diagonally to the end point",
+					"done": true
+				},
+				{
+					"details": "HoveredTile not reseting when going back to title screen",
+					"done": true
+				},
+				{
+					"details": "Little lag when going back to the title screen",
+					"done": true
+				},
+				{
+					"details": "Drawing a conveyor back and forth a spawner/despawner cut conveyor weirdly",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "0fe5a490-ae36-4e88-964f-46e6afc50f4f",
+			"title": "Add more level",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": [
+				{
+					"details": "X easy levels",
+					"done": true
+				},
+				{
+					"details": "X medium levels",
+					"done": false
+				},
+				{
+					"details": "X hard levels",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "ec9a07a7-0c8b-4faf-837a-699fc259e1e9",
+			"title": "Add SFXs",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": [
+				{
+					"details": "Main music Intro and loop",
+					"done": true
+				},
+				{
+					"details": "Button click SFX",
+					"done": true
+				},
+				{
+					"details": "Win SFX",
+					"done": true
+				},
+				{
+					"details": "Loose SFX",
+					"done": true
+				},
+				{
+					"details": "Transition SFX",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "8a1e6aa3-4f8e-4987-8dc8-b059db939bb0",
+			"title": "Add locked Building in Tutorial",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": []
+		},
+		{
+			"uuid": "848ba58f-e916-4126-9a46-b08e780ff5c2",
+			"title": "Fix Main Page level (top left corner)",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": []
+		},
+		{
+			"uuid": "076379ed-870e-4689-8d39-986fb68535ae",
+			"title": "Remove the \"No\" option after clearing a level",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": []
+		},
+		{
+			"uuid": "8d42bbe7-25f2-4dad-b7c0-aaa4a5316045",
+			"title": "Clean up testing Inputs",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": [
+				{
+					"details": "Fullscreen",
+					"done": true
+				},
+				{
+					"details": "Quit",
+					"done": true
+				},
+				{
+					"details": "Particle",
+					"done": true
+				},
+				{
+					"details": "Reset",
+					"done": true
+				},
+				{
+					"details": "Save",
+					"done": true
+				},
+				{
+					"details": "Load",
+					"done": true
+				},
+				{
+					"details": "Next",
+					"done": true
+				},
+				{
+					"details": "Show",
+					"done": true
+				},
+				{
+					"details": "Hide",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "ad5fd1a1-5408-461d-b595-e05bba5ffa48",
+			"title": "Remove Fullscreen and Quit button from WebVersion",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": []
+		},
+		{
+			"uuid": "c8ecf2d3-e110-4887-85f1-2de77212656f",
+			"title": "Load correct level for Tutorial / Levels",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": [
+				{
+					"details": "Tutorial should restart the tutorial at the beginning",
+					"done": true
+				},
+				{
+					"details": "Levels should continue the levels where the player left off",
+					"done": true
+				},
+				{
+					"details": "Text should transition player to Levels when they are done with the tutorials",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "669e637c-8cab-4b9a-adc1-62afe4fe717b",
+			"title": "Redraw tutorial Levels",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": []
+		},
+		{
+			"uuid": "b2379299-40e7-421d-9f0e-af1a9d657484",
+			"title": "Add a Clear/Reset level button?",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": []
+		},
+		{
+			"uuid": "dc00a89e-b2cf-4055-90a0-6794f38348ee",
+			"title": "Change visual of back to main button",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": []
+		},
+		{
+			"uuid": "133b5525-1ce6-4eaf-8c56-e652ed7977d9",
+			"title": "On Cellphone, Main Screen is a little laggy",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": []
+		},
+		{
+			"uuid": "3092543f-c282-409b-ac9b-d576518f764c",
+			"title": "Add the name of Level",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": [
+				{
+					"details": "In the Level itself",
+					"done": true
+				},
+				{
+					"details": "In the LevelCompleteView",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "763d81e6-3d07-4660-b4d1-68090df9930a",
+			"title": "Change Font of the Title Screen",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": []
+		},
+		{
+			"uuid": "30118174-4eea-43c8-ac53-05a8af5e796c",
+			"title": "Reset color of Despawner when stopping level",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": []
+		},
+		{
+			"uuid": "be18041b-98d1-444f-9add-c8c544e61b2a",
+			"title": "Center Tutorial Level more",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": []
+		},
+		{
+			"uuid": "ae04e537-a95f-4c67-8cc2-00211403ffc1",
+			"title": "Make Conveyors move at all time",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": []
+		},
+		{
+			"uuid": "f3668966-e5fb-4060-abfe-8c05e194e1f0",
+			"title": "Change Stacker level to force understanding",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": []
+		},
+		{
+			"uuid": "f9ac4730-6785-470e-bf2c-053e2210ef56",
+			"title": "Make cursor red when Destruction is clicked",
+			"description": "",
+			"category": "0d3e8dfe-aeef-4937-bf91-775e0a6f9821",
+			"steps": []
+		}
+	],
+	"layout": {
+		"columns": [
+			[
+				"b52768a9-f036-430f-aa97-7d4f54c59910"
+			],
+			[
+				"08db84c4-363f-4e9f-a88b-28403464d3c2"
+			],
+			[
+				"fb035e58-6426-4621-8995-717890e56bc2"
+			],
+			[
+				"5658d053-659a-4a76-810d-66874c75cd06"
+			]
+		]
+	}
+}

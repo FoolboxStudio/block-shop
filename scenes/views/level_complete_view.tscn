@@ -1,0 +1,130 @@
+[gd_scene load_steps=14 format=3 uid="uid://dsfe1w5tvgsx4"]
+
+[ext_resource type="Script" path="res://scenes/views/level_complete_view.gd" id="1_5y8vv"]
+[ext_resource type="Script" path="res://addons/foolish_godot/scripts/input_controller/empty_input_controller.gd" id="1_ew6wj"]
+[ext_resource type="Script" path="res://addons/foolish_godot/scripts/resources/transition_data.gd" id="2_f5qpi"]
+[ext_resource type="Texture2D" uid="uid://ru8snk64gw58" path="res://sprites/ui.png" id="4_77fyb"]
+[ext_resource type="PackedScene" uid="uid://c8isht14vc8dn" path="res://addons/foolish_godot/reusable_ui/custom_buttons/custom_button.tscn" id="4_m37kq"]
+[ext_resource type="Script" path="res://addons/foolish_godot/scripts/resources/command.gd" id="5_awrji"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wjddp"]
+bg_color = Color(0, 0, 0, 0.862745)
+
+[sub_resource type="Resource" id="Resource_2n6x7"]
+script = ExtResource("2_f5qpi")
+duration = 0.3
+initial_position = Vector2(0, 50)
+target_position = Vector2(0, 0)
+initial_color = Color(1, 1, 1, 0)
+target_color = Color(1, 1, 1, 1)
+target_visibility = true
+
+[sub_resource type="Resource" id="Resource_64o61"]
+script = ExtResource("2_f5qpi")
+duration = 0.3
+initial_position = Vector2(0, 0)
+target_position = Vector2(0, 50)
+initial_color = Color(1, 1, 1, 1)
+target_color = Color(1, 1, 1, 0)
+target_visibility = false
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_metac"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gplpt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_utbx8"]
+
+[sub_resource type="Resource" id="Resource_svr1o"]
+script = ExtResource("5_awrji")
+method = "load_next_level"
+
+[node name="LevelCompleteView" type="Panel" node_paths=PackedStringArray("position_control")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wjddp")
+script = ExtResource("1_5y8vv")
+position_control = NodePath("PositionControl")
+visible_transition = SubResource("Resource_2n6x7")
+invisible_transition = SubResource("Resource_64o61")
+
+[node name="InputController" type="Node" parent="."]
+script = ExtResource("1_ew6wj")
+
+[node name="PositionControl" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="PositionControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_metac")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PositionControl/PanelContainer"]
+layout_mode = 2
+mouse_filter = 0
+theme_override_constants/separation = 10
+
+[node name="CompleteText" type="RichTextLabel" parent="PositionControl/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[rainbow][wave]Level Complete![/wave][/rainbow]"
+fit_content = true
+autowrap_mode = 0
+
+[node name="ExtraText" type="Label" parent="PositionControl/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "This is a test text"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PositionControl/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 8
+
+[node name="CustomButton" parent="PositionControl/PanelContainer/VBoxContainer/HBoxContainer" instance=ExtResource("4_m37kq")]
+z_index = 1
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gplpt")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_utbx8")
+text = "Next Level"
+command = SubResource("Resource_svr1o")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PositionControl/PanelContainer/VBoxContainer/HBoxContainer/CustomButton"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_77fyb")
+region_rect = Rect2(0, 0, 16, 16)
+patch_margin_left = 7
+patch_margin_top = 9
+patch_margin_right = 7
+patch_margin_bottom = 9

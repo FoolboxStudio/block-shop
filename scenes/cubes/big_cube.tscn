@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7ua3m6euexb4"]
+
+[ext_resource type="Script" path="res://scenes/cubes/big_cube.gd" id="1_13gvv"]
+
+[node name="Cube" type="Node2D" node_paths=PackedStringArray("cube_sprite")]
+script = ExtResource("1_13gvv")
+colors = Array[Color]([Color(0.0627451, 0.0588235, 0.141176, 1), Color(0.960784, 0.996078, 1, 1)])
+cube_sprite = NodePath("CubeSprite")
+
+[node name="CubeSprite" type="Sprite2D" parent="."]
+z_index = 14
+z_as_relative = false

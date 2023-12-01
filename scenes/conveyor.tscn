@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ltsrgtfgawmt"]
+
+[ext_resource type="SpriteFrames" uid="uid://b6jw36071ktc7" path="res://sprites/conveyor_belt_sprite_frame.tres" id="1_wenyu"]
+[ext_resource type="Script" path="res://scenes/conveyor.gd" id="2_l7hfm"]
+
+[node name="Conveyor" type="AnimatedSprite2D" groups=["animated"]]
+z_index = 5
+z_as_relative = false
+sprite_frames = ExtResource("1_wenyu")
+autoplay = "default"
+script = ExtResource("2_l7hfm")

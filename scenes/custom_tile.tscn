@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://okretl202af4"]
+
+[ext_resource type="Script" path="res://scenes/custom_tile.gd" id="1_rbay7"]
+[ext_resource type="Texture2D" uid="uid://cix2g5ftbta5n" path="res://sprites/background1.png" id="2_siyef"]
+[ext_resource type="Texture2D" uid="uid://upr3upx7gcr1" path="res://sprites/background2.png" id="3_jsifj"]
+[ext_resource type="PackedScene" uid="uid://e7083c1b5mdp" path="res://scenes/building.tscn" id="10_8putc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mq85x"]
+size = Vector2(54, 54)
+
+[node name="CustomTile" type="Area2D" node_paths=PackedStringArray("building")]
+script = ExtResource("1_rbay7")
+can_be_drawn_texture = ExtResource("2_siyef")
+cannot_be_drawn_texture = ExtResource("3_jsifj")
+building = NodePath("Building")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = 5
+z_as_relative = false
+texture = ExtResource("2_siyef")
+
+[node name="Building" parent="." instance=ExtResource("10_8putc")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mq85x")

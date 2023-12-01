@@ -1,0 +1,100 @@
+[gd_scene load_steps=17 format=3 uid="uid://bwhhgpy3xor68"]
+
+[ext_resource type="Script" path="res://scenes/views/level_design_menu_view.gd" id="1_oylvo"]
+[ext_resource type="Resource" uid="uid://btjoa63oiqdyj" path="res://resources/building_data/spawner_cube_black.tres" id="3_7td0q"]
+[ext_resource type="Resource" uid="uid://r38rbfcstggg" path="res://resources/building_data/spawner_cube_white.tres" id="4_1ruqf"]
+[ext_resource type="Resource" uid="uid://mphss7c5q5kc" path="res://resources/building_data/spawner_big_cube_black.tres" id="4_8x23f"]
+[ext_resource type="Resource" uid="uid://djxyv45kgsynk" path="res://resources/building_data/despawner.tres" id="5_8l7qm"]
+[ext_resource type="Resource" uid="uid://cxgfe6eiwis32" path="res://resources/building_data/spawner_big_cube_white.tres" id="5_48he8"]
+[ext_resource type="Resource" uid="uid://df6stwcefanlu" path="res://resources/building_data/spawner_long_vertical_cube_black.tres" id="6_nu04o"]
+[ext_resource type="Resource" uid="uid://ixrmkyldt02x" path="res://resources/building_data/spawner_long_vertical_cube_white.tres" id="7_isvrx"]
+[ext_resource type="Resource" uid="uid://byjj5fqdjlwpp" path="res://resources/building_data/spawner_long_horizontal_cube_black.tres" id="8_ldlmh"]
+[ext_resource type="Resource" uid="uid://bnhs5qwybq684" path="res://resources/building_data/spawner_long_horizontal_cube_white.tres" id="9_8mf5j"]
+[ext_resource type="Script" path="res://addons/foolish_godot/scripts/resources/transition_data.gd" id="9_fyxnf"]
+[ext_resource type="Texture2D" uid="uid://ru8snk64gw58" path="res://sprites/ui.png" id="14_xg3fh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_04sqq"]
+
+[sub_resource type="Resource" id="Resource_4vhag"]
+script = ExtResource("9_fyxnf")
+duration = 1.0
+initial_position = Vector2(150, 0)
+target_position = Vector2(0, 0)
+initial_color = Color(1, 1, 1, 1)
+target_color = Color(1, 1, 1, 1)
+target_visibility = true
+
+[sub_resource type="Resource" id="Resource_ije1s"]
+script = ExtResource("9_fyxnf")
+duration = 1.0
+initial_position = Vector2(0, 0)
+target_position = Vector2(150, 0)
+initial_color = Color(1, 1, 1, 1)
+target_color = Color(1, 1, 1, 1)
+target_visibility = false
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jqwg2"]
+
+[node name="LevelDesignMenuView" type="Panel" node_paths=PackedStringArray("position_control")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_04sqq")
+script = ExtResource("1_oylvo")
+building_datas = Array[Resource("res://scripts/resources/building_data.gd")]([ExtResource("3_7td0q"), ExtResource("4_1ruqf"), ExtResource("4_8x23f"), ExtResource("5_48he8"), ExtResource("6_nu04o"), ExtResource("7_isvrx"), ExtResource("8_ldlmh"), ExtResource("9_8mf5j"), ExtResource("5_8l7qm")])
+position_control = NodePath("PositionControl")
+visible_transition = SubResource("Resource_4vhag")
+invisible_transition = SubResource("Resource_ije1s")
+
+[node name="PositionControl" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PositionControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -12.0
+offset_right = 12.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jqwg2")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PositionControl/PanelContainer"]
+layout_mode = 2
+texture = ExtResource("14_xg3fh")
+region_rect = Rect2(0, 0, 9, 16)
+patch_margin_left = 7
+patch_margin_top = 7
+patch_margin_bottom = 7
+
+[node name="MarginContainer" type="MarginContainer" parent="PositionControl/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="ButtonHolder" type="GridContainer" parent="PositionControl/PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 2

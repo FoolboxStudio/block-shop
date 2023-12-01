@@ -1,0 +1,177 @@
+[gd_scene load_steps=11 format=3 uid="uid://c1v4fw5qvxkeh"]
+
+[ext_resource type="Script" path="res://scenes/views/level_view.gd" id="1_fvgvc"]
+[ext_resource type="Script" path="res://addons/foolish_godot/scripts/resources/transition_data.gd" id="2_4lfqa"]
+[ext_resource type="Texture2D" uid="uid://ru8snk64gw58" path="res://sprites/ui.png" id="4_24y5a"]
+[ext_resource type="Texture2D" uid="uid://imn7ie2y02k4" path="res://sprites/title_sprite.png" id="5_worud"]
+[ext_resource type="Texture2D" uid="uid://luoxb3rxx573" path="res://sprites/game_area.png" id="14_05gar"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y0owd"]
+
+[sub_resource type="Resource" id="Resource_lhp0f"]
+script = ExtResource("2_4lfqa")
+duration = 1.0
+initial_position = Vector2(0, -300)
+target_position = Vector2(0, 0)
+initial_color = Color(1, 1, 1, 1)
+target_color = Color(1, 1, 1, 1)
+target_visibility = true
+
+[sub_resource type="Resource" id="Resource_253se"]
+script = ExtResource("2_4lfqa")
+duration = 1.0
+initial_position = Vector2(0, 0)
+target_position = Vector2(0, -300)
+initial_color = Color(1, 1, 1, 1)
+target_color = Color(1, 1, 1, 1)
+target_visibility = false
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j8jhr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bxwu1"]
+
+[node name="LevelView" type="Panel" node_paths=PackedStringArray("position_control")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_y0owd")
+script = ExtResource("1_fvgvc")
+position_control = NodePath("PositionControl")
+visible_transition = SubResource("Resource_lhp0f")
+invisible_transition = SubResource("Resource_253se")
+
+[node name="PositionControl" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PositionControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -46.5
+offset_right = 60.0
+offset_bottom = 46.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 24
+
+[node name="PanelContainer3" type="PanelContainer" parent="PositionControl/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_j8jhr")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PositionControl/VBoxContainer/PanelContainer3"]
+layout_mode = 2
+texture = ExtResource("4_24y5a")
+region_rect = Rect2(0, 0, 16, 16)
+patch_margin_left = 7
+patch_margin_top = 9
+patch_margin_right = 7
+patch_margin_bottom = 9
+
+[node name="MarginContainer" type="MarginContainer" parent="PositionControl/VBoxContainer/PanelContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 10
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PositionControl/VBoxContainer/PanelContainer3/MarginContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "This is a test"
+fit_content = true
+autowrap_mode = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="PositionControl/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bxwu1")
+
+[node name="MarginContainer" type="MarginContainer" parent="PositionControl/VBoxContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/margin_left = 13
+theme_override_constants/margin_top = 13
+theme_override_constants/margin_right = 13
+theme_override_constants/margin_bottom = 13
+
+[node name="GridContainer" type="GridContainer" parent="PositionControl/VBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PositionControl/VBoxContainer/PanelContainer"]
+z_index = 50
+z_as_relative = false
+layout_mode = 2
+texture = ExtResource("14_05gar")
+patch_margin_left = 21
+patch_margin_top = 21
+patch_margin_right = 21
+patch_margin_bottom = 21
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Control" type="Control" parent="PositionControl/VBoxContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="PositionControl/VBoxContainer/PanelContainer/Control"]
+z_index = 100
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -10.0
+offset_right = 46.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("5_worud")
+
+[node name="Label" type="Label" parent="PositionControl/VBoxContainer/PanelContainer/Control"]
+z_index = 100
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -9.0
+offset_right = 27.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level 1"
+horizontal_alignment = 1
+vertical_alignment = 1

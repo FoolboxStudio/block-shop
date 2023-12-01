@@ -1,10 +1,11 @@
 
 # Godot-specific ignores
 .import/
-.builds/
-.sound/
-.sprites/
-.aseprite/
+builds/
+sound/
+font/
+sprites/
+aseprite/
 export.cfg
 export_presets.cfg
 

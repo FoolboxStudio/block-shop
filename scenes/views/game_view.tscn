@@ -1,0 +1,950 @@
+[gd_scene load_steps=57 format=3 uid="uid://n6xsdwf4l2kg"]
+
+[ext_resource type="Script" path="res://scenes/views/game_view.gd" id="1_go6ak"]
+[ext_resource type="PackedScene" uid="uid://c1v4fw5qvxkeh" path="res://scenes/views/level_view.tscn" id="1_x1rkp"]
+[ext_resource type="PackedScene" uid="uid://d7tmev6j32p0" path="res://scenes/views/building_menu_view.tscn" id="2_73giy"]
+[ext_resource type="Script" path="res://addons/foolish_godot/scripts/resources/custom_button_data.gd" id="2_g5rfu"]
+[ext_resource type="Texture2D" uid="uid://corc1nuw4ycle" path="res://sprites/full_screen_640x360.png" id="2_guh4u"]
+[ext_resource type="PackedScene" uid="uid://bwhhgpy3xor68" path="res://scenes/views/level_design_menu_view.tscn" id="2_h3gsr"]
+[ext_resource type="Texture2D" uid="uid://cuxpo4crbuwur" path="res://sprites/background_big_cube_particles.png" id="2_im3d2"]
+[ext_resource type="Resource" uid="uid://dpt7cg0ufsct2" path="res://resources/level_data/title_screen/title_screen_level_data.tres" id="2_islo8"]
+[ext_resource type="Script" path="res://scripts/resources/level_complete_data.gd" id="3_s22rc"]
+[ext_resource type="Script" path="res://scripts/input_controller_system/game_view_input_controller.gd" id="4_urtgo"]
+[ext_resource type="AudioStream" uid="uid://b1jbh1n6a4qj4" path="res://sound/sfx/Correct Answer 10.wav" id="4_xks5t"]
+[ext_resource type="Texture2D" uid="uid://cbowxdfbvy2ne" path="res://sprites/mouse_cursor1.png" id="5_2da5y"]
+[ext_resource type="AudioStream" uid="uid://mxgcycltnf66" path="res://sound/sfx/Falling Stalactites.wav" id="5_7ruaq"]
+[ext_resource type="Texture2D" uid="uid://dj4l628er18d2" path="res://sprites/background_small_cube_particles.png" id="6_3yrci"]
+[ext_resource type="Texture2D" uid="uid://b4h8ojmsr8hem" path="res://sprites/mouse_cursor2.png" id="6_c08at"]
+[ext_resource type="Texture2D" uid="uid://ru8snk64gw58" path="res://sprites/ui.png" id="7_vyhmd"]
+[ext_resource type="PackedScene" uid="uid://c8isht14vc8dn" path="res://addons/foolish_godot/reusable_ui/custom_buttons/custom_button.tscn" id="8_8yrqr"]
+[ext_resource type="PackedScene" uid="uid://ckefcatrcrwdb" path="res://scenes/views/play_menu_view.tscn" id="9_mqbs6"]
+[ext_resource type="Texture2D" uid="uid://cpt7rpjevtrvl" path="res://sprites/tool_menu_button/tool_menu_button2.png" id="9_o44qf"]
+[ext_resource type="Script" path="res://addons/foolish_godot/scripts/resources/command.gd" id="10_2obn8"]
+[ext_resource type="Texture2D" uid="uid://blwvhix3atq21" path="res://sprites/tool_menu_button/tool_menu_button21.png" id="11_jbsyf"]
+[ext_resource type="Texture2D" uid="uid://mi17cu4m3auh" path="res://sprites/game_area/game_area2.png" id="13_ihpcf"]
+[ext_resource type="FontFile" uid="uid://bq0cv0gg8ft0x" path="res://font/Foolbox.ttf" id="16_oewil"]
+[ext_resource type="PackedScene" uid="uid://dsfe1w5tvgsx4" path="res://scenes/views/level_complete_view.tscn" id="18_r116c"]
+[ext_resource type="Texture2D" uid="uid://cfmi3qkhi61x3" path="res://sprites/transition_big_2x2_cube_particles.png" id="19_le8v2"]
+[ext_resource type="Texture2D" uid="uid://dgs6f0kkwhwfw" path="res://sprites/transition_small_2x2_cube_particles.png" id="20_vis0i"]
+[ext_resource type="Texture2D" uid="uid://djed4bmbexv78" path="res://sprites/transition_big_1x1_cube_particles.png" id="21_0b2uc"]
+[ext_resource type="Texture2D" uid="uid://dimyvc50uinkp" path="res://sprites/transition_small_1x1_cube_particles.png" id="22_w2hm6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tttb6"]
+
+[sub_resource type="Resource" id="Resource_xyh20"]
+script = ExtResource("10_2obn8")
+method = "load_next_level"
+
+[sub_resource type="Resource" id="Resource_vxav3"]
+script = ExtResource("3_s22rc")
+complete_string = "[rainbow][wave]Level Complete![/wave][/rainbow]"
+extra_string = ""
+click_command = SubResource("Resource_xyh20")
+button_text = "Next Level"
+button_width = 100
+
+[sub_resource type="Resource" id="Resource_bpi02"]
+script = ExtResource("10_2obn8")
+method = "return_to_main_instant"
+
+[sub_resource type="Resource" id="Resource_8qnem"]
+script = ExtResource("3_s22rc")
+complete_string = "[rainbow][wave]Training Complete![/wave][/rainbow]"
+extra_string = "Hopefully you've got what it takes to be the new Block Shop operator.
+If you get stuck, look for the walkthrough link in the option menu.
+Good luck!"
+click_command = SubResource("Resource_bpi02")
+button_text = "Back to Main"
+button_width = 120
+
+[sub_resource type="Resource" id="Resource_jl2qw"]
+script = ExtResource("10_2obn8")
+method = "return_to_main_instant"
+
+[sub_resource type="Resource" id="Resource_gayle"]
+script = ExtResource("3_s22rc")
+complete_string = "[rainbow][wave]Congratulations![/wave][/rainbow]"
+extra_string = "You are now an official Block Shop operator.
+You are now ready to take on more complex challenges and responsibilities.
+Stay tuned, and be sure to leave a comment in the meantime!"
+click_command = SubResource("Resource_jl2qw")
+button_text = "Back to Main"
+button_width = 120
+
+[sub_resource type="Resource" id="Resource_fw2o6"]
+script = ExtResource("2_g5rfu")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4u6bl"]
+
+[sub_resource type="Resource" id="Resource_i48u1"]
+script = ExtResource("10_2obn8")
+method = "return_to_main"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qbfhy"]
+bg_color = Color(0, 0, 0, 0.588235)
+
+[sub_resource type="Resource" id="Resource_01hbq"]
+script = ExtResource("10_2obn8")
+method = "show_option_view_holder"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i8gmy"]
+bg_color = Color(0, 0, 0, 0.294118)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5yjp8"]
+
+[sub_resource type="FontVariation" id="FontVariation_lndq8"]
+base_font = ExtResource("16_oewil")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtydw"]
+atlas = ExtResource("19_le8v2")
+region = Rect2(672, 0, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hh7ta"]
+atlas = ExtResource("19_le8v2")
+region = Rect2(672, 0, 28, 28)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mfv4v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sgfvh"]
+
+[sub_resource type="Resource" id="Resource_amocj"]
+script = ExtResource("10_2obn8")
+method = "switch_to_tutorial"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t38k1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0m3ys"]
+
+[sub_resource type="Resource" id="Resource_rj1jg"]
+script = ExtResource("10_2obn8")
+method = "switch_to_level"
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sgsso"]
+particles_animation = true
+particles_anim_h_frames = 26
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_a03gj"]
+particles_animation = true
+particles_anim_h_frames = 26
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rlxis"]
+particles_animation = true
+particles_anim_h_frames = 26
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_neij4"]
+particles_animation = true
+particles_anim_h_frames = 26
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_suodh"]
+particles_animation = true
+particles_anim_h_frames = 26
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[node name="GameView" type="Panel" node_paths=PackedStringArray("position_control", "input_controller") groups=["game_view"]]
+process_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_tttb6")
+script = ExtResource("1_go6ak")
+level_building_board_size = Vector2(3, 2)
+title_screen_level_data = ExtResource("2_islo8")
+level_complete_data = SubResource("Resource_vxav3")
+tutorial_complete_data = SubResource("Resource_8qnem")
+game_complete_data = SubResource("Resource_gayle")
+normal_mouse_cursor = ExtResource("5_2da5y")
+erase_mouse_cursor = ExtResource("6_c08at")
+button_data = SubResource("Resource_fw2o6")
+position_control = NodePath("PositionControl")
+input_controller = NodePath("InputController")
+
+[node name="WinStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_xks5t")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="TransitionStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_7ruaq")
+volume_db = -15.0
+bus = &"SFX"
+
+[node name="InputController" type="Node" parent="."]
+script = ExtResource("4_urtgo")
+
+[node name="PositionControl" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="PositionControl"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="LevelDesignMenuView" parent="PositionControl/Control" instance=ExtResource("2_h3gsr")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="PanelContainer" type="Control" parent="PositionControl"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_right = 80.0
+offset_bottom = 40.0
+grow_vertical = 2
+
+[node name="BuildingMenuView" parent="PositionControl/PanelContainer" instance=ExtResource("2_73giy")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="MarginContainer2" type="MarginContainer" parent="PositionControl"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PositionControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="LevelView" parent="PositionControl/VBoxContainer" instance=ExtResource("1_x1rkp")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="PositionControl"]
+z_index = -20
+z_as_relative = false
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 2
+texture = ExtResource("2_guh4u")
+stretch_mode = 1
+
+[node name="BackToMainButton" type="PanelContainer" parent="PositionControl"]
+z_as_relative = false
+layout_mode = 1
+offset_right = 28.0
+offset_bottom = 35.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_4u6bl")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PositionControl/BackToMainButton"]
+layout_mode = 2
+texture = ExtResource("7_vyhmd")
+region_rect = Rect2(7, 7, 9, 9)
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 9
+patch_margin_bottom = 9
+
+[node name="MarginContainer" type="MarginContainer" parent="PositionControl/BackToMainButton"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="CustomButton" parent="PositionControl/BackToMainButton/MarginContainer" instance=ExtResource("8_8yrqr")]
+layout_mode = 2
+texture = ExtResource("11_jbsyf")
+command = SubResource("Resource_i48u1")
+
+[node name="LevelStartedBlockingControl" type="Panel" parent="PositionControl"]
+visible = false
+z_index = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qbfhy")
+
+[node name="PauseButton" type="PanelContainer" parent="PositionControl"]
+z_index = 450
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -28.0
+offset_bottom = 35.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_4u6bl")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PositionControl/PauseButton"]
+layout_mode = 2
+texture = ExtResource("7_vyhmd")
+region_rect = Rect2(0, 7, 9, 9)
+patch_margin_left = 9
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 9
+
+[node name="MarginContainer" type="MarginContainer" parent="PositionControl/PauseButton"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 12
+
+[node name="CustomButton" parent="PositionControl/PauseButton/MarginContainer" instance=ExtResource("8_8yrqr")]
+z_index = 1
+layout_mode = 2
+texture = ExtResource("9_o44qf")
+command = SubResource("Resource_01hbq")
+
+[node name="PanelContainer2" type="Control" parent="PositionControl"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="PlayMenuView" parent="PositionControl/PanelContainer2" instance=ExtResource("9_mqbs6")]
+z_index = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+
+[node name="TitleScreen" type="Control" parent="PositionControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="PositionControl/TitleScreen"]
+z_index = 399
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_i8gmy")
+
+[node name="Title" type="PanelContainer" parent="PositionControl/TitleScreen"]
+z_index = 400
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -233.5
+offset_top = -99.5
+offset_right = 233.5
+offset_bottom = 43.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_5yjp8")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PositionControl/TitleScreen/Title"]
+z_index = 1
+layout_mode = 2
+texture = ExtResource("13_ihpcf")
+patch_margin_left = 21
+patch_margin_top = 21
+patch_margin_right = 21
+patch_margin_bottom = 21
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="PositionControl/TitleScreen/Title"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PositionControl/TitleScreen/Title/CenterContainer"]
+z_index = 2
+layout_mode = 2
+theme_override_colors/default_color = Color(0.960784, 0.996078, 1, 1)
+theme_override_colors/font_outline_color = Color(0.298039, 0.329412, 0.419608, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = SubResource("FontVariation_lndq8")
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "[wave]Bl  ck Sh  p"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Control" type="Control" parent="PositionControl/TitleScreen/Title"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PositionControl/TitleScreen/Title/Control"]
+z_index = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -109.0
+offset_top = -9.0
+offset_right = -71.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_jtydw")
+
+[node name="Control2" type="Control" parent="PositionControl/TitleScreen/Title"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PositionControl/TitleScreen/Title/Control2"]
+z_index = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 113.0
+offset_top = -9.0
+offset_right = 151.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_hh7ta")
+
+[node name="CustomButton" parent="PositionControl/TitleScreen" instance=ExtResource("8_8yrqr")]
+z_index = 400
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = 58.0
+offset_right = 99.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mfv4v")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_sgfvh")
+text = "Training"
+command = SubResource("Resource_amocj")
+normal_size = Vector2(92, 30)
+hover_size = Vector2(92, 30)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PositionControl/TitleScreen/CustomButton"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_vyhmd")
+region_rect = Rect2(0, 0, 16, 16)
+patch_margin_left = 7
+patch_margin_top = 9
+patch_margin_right = 7
+patch_margin_bottom = 9
+
+[node name="CustomButton2" parent="PositionControl/TitleScreen" instance=ExtResource("8_8yrqr")]
+z_index = 400
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 117.0
+offset_top = 58.0
+offset_right = 207.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_t38k1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0m3ys")
+text = "Start"
+command = SubResource("Resource_rj1jg")
+normal_size = Vector2(92, 30)
+hover_size = Vector2(92, 30)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PositionControl/TitleScreen/CustomButton2"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_vyhmd")
+region_rect = Rect2(0, 0, 16, 16)
+patch_margin_left = 7
+patch_margin_top = 9
+patch_margin_right = 7
+patch_margin_bottom = 9
+
+[node name="LevelCompleteView" parent="PositionControl" instance=ExtResource("18_r116c")]
+visible = false
+z_index = 500
+layout_mode = 1
+
+[node name="BackgroundParticlesHolder" type="Node2D" parent="PositionControl"]
+
+[node name="BigParticles" type="Node2D" parent="PositionControl/BackgroundParticlesHolder"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="PositionControl/BackgroundParticlesHolder/BigParticles"]
+z_index = -10
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_sgsso")
+position = Vector2(-290, 388)
+amount = 6
+lifetime = 60.0
+preprocess = 60.0
+fixed_fps = 30
+draw_order = 1
+texture = ExtResource("2_im3d2")
+direction = Vector2(1, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+angle_min = -45.0
+angle_max = 45.0
+scale_amount_min = 1.5
+scale_amount_max = 1.5
+anim_offset_max = 1.0
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="PositionControl/BackgroundParticlesHolder/BigParticles"]
+z_index = -10
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_sgsso")
+position = Vector2(-154, 388)
+amount = 6
+lifetime = 60.0
+preprocess = 60.0
+fixed_fps = 30
+draw_order = 1
+texture = ExtResource("2_im3d2")
+direction = Vector2(1, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+angle_min = -45.0
+angle_max = 45.0
+scale_amount_min = 1.5
+scale_amount_max = 1.5
+anim_offset_max = 1.0
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="PositionControl/BackgroundParticlesHolder/BigParticles"]
+z_index = -10
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_sgsso")
+position = Vector2(-18, 388)
+amount = 6
+lifetime = 60.0
+preprocess = 60.0
+fixed_fps = 30
+draw_order = 1
+texture = ExtResource("2_im3d2")
+direction = Vector2(1, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+angle_min = -45.0
+angle_max = 45.0
+scale_amount_min = 1.5
+scale_amount_max = 1.5
+anim_offset_max = 1.0
+
+[node name="CPUParticles2D4" type="CPUParticles2D" parent="PositionControl/BackgroundParticlesHolder/BigParticles"]
+z_index = -10
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_sgsso")
+position = Vector2(118, 388)
+amount = 6
+lifetime = 60.0
+preprocess = 60.0
+fixed_fps = 30
+draw_order = 1
+texture = ExtResource("2_im3d2")
+direction = Vector2(1, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+angle_min = -45.0
+angle_max = 45.0
+scale_amount_min = 1.5
+scale_amount_max = 1.5
+anim_offset_max = 1.0
+
+[node name="CPUParticles2D5" type="CPUParticles2D" parent="PositionControl/BackgroundParticlesHolder/BigParticles"]
+z_index = -10
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_sgsso")
+position = Vector2(254, 388)
+amount = 6
+lifetime = 60.0
+preprocess = 60.0
+fixed_fps = 30
+draw_order = 1
+texture = ExtResource("2_im3d2")
+direction = Vector2(1, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+angle_min = -45.0
+angle_max = 45.0
+scale_amount_min = 1.5
+scale_amount_max = 1.5
+anim_offset_max = 1.0
+
+[node name="CPUParticles2D6" type="CPUParticles2D" parent="PositionControl/BackgroundParticlesHolder/BigParticles"]
+z_index = -10
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_sgsso")
+position = Vector2(390, 388)
+amount = 6
+lifetime = 60.0
+preprocess = 60.0
+fixed_fps = 30
+draw_order = 1
+texture = ExtResource("2_im3d2")
+direction = Vector2(1, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+angle_min = -45.0
+angle_max = 45.0
+scale_amount_min = 1.5
+scale_amount_max = 1.5
+anim_offset_max = 1.0
+
+[node name="CPUParticles2D7" type="CPUParticles2D" parent="PositionControl/BackgroundParticlesHolder/BigParticles"]
+z_index = -10
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_sgsso")
+position = Vector2(526, 388)
+amount = 6
+lifetime = 60.0
+preprocess = 60.0
+fixed_fps = 30
+draw_order = 1
+texture = ExtResource("2_im3d2")
+direction = Vector2(1, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+angle_min = -45.0
+angle_max = 45.0
+scale_amount_min = 1.5
+scale_amount_max = 1.5
+anim_offset_max = 1.0
+
+[node name="SmallParticles" type="Node2D" parent="PositionControl/BackgroundParticlesHolder"]
+position = Vector2(68, 0)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="PositionControl/BackgroundParticlesHolder/SmallParticles"]
+z_index = -10
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_sgsso")
+position = Vector2(-290, 388)
+amount = 6
+lifetime = 60.0
+preprocess = 60.0
+fixed_fps = 30
+draw_order = 1
+texture = ExtResource("6_3yrci")
+direction = Vector2(1, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+angle_min = -45.0
+angle_max = 45.0
+scale_amount_min = 1.5
+scale_amount_max = 1.5
+anim_offset_max = 1.0
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="PositionControl/BackgroundParticlesHolder/SmallParticles"]
+z_index = -10
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_sgsso")
+position = Vector2(-154, 388)
+amount = 6
+lifetime = 60.0
+preprocess = 60.0
+fixed_fps = 30
+draw_order = 1
+texture = ExtResource("6_3yrci")
+direction = Vector2(1, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+angle_min = -45.0
+angle_max = 45.0
+scale_amount_min = 1.5
+scale_amount_max = 1.5
+anim_offset_max = 1.0
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="PositionControl/BackgroundParticlesHolder/SmallParticles"]
+z_index = -10
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_sgsso")
+position = Vector2(-18, 388)
+amount = 6
+lifetime = 60.0
+preprocess = 60.0
+fixed_fps = 30
+draw_order = 1
+texture = ExtResource("6_3yrci")
+direction = Vector2(1, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+angle_min = -45.0
+angle_max = 45.0
+scale_amount_min = 1.5
+scale_amount_max = 1.5
+anim_offset_max = 1.0
+
+[node name="CPUParticles2D4" type="CPUParticles2D" parent="PositionControl/BackgroundParticlesHolder/SmallParticles"]
+z_index = -10
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_sgsso")
+position = Vector2(118, 388)
+amount = 6
+lifetime = 60.0
+preprocess = 60.0
+fixed_fps = 30
+draw_order = 1
+texture = ExtResource("6_3yrci")
+direction = Vector2(1, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+angle_min = -45.0
+angle_max = 45.0
+scale_amount_min = 1.5
+scale_amount_max = 1.5
+anim_offset_max = 1.0
+
+[node name="CPUParticles2D5" type="CPUParticles2D" parent="PositionControl/BackgroundParticlesHolder/SmallParticles"]
+z_index = -10
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_sgsso")
+position = Vector2(254, 388)
+amount = 6
+lifetime = 60.0
+preprocess = 60.0
+fixed_fps = 30
+draw_order = 1
+texture = ExtResource("6_3yrci")
+direction = Vector2(1, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+angle_min = -45.0
+angle_max = 45.0
+scale_amount_min = 1.5
+scale_amount_max = 1.5
+anim_offset_max = 1.0
+
+[node name="CPUParticles2D6" type="CPUParticles2D" parent="PositionControl/BackgroundParticlesHolder/SmallParticles"]
+z_index = -10
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_sgsso")
+position = Vector2(390, 388)
+amount = 6
+lifetime = 60.0
+preprocess = 60.0
+fixed_fps = 30
+draw_order = 1
+texture = ExtResource("6_3yrci")
+direction = Vector2(1, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+angle_min = -45.0
+angle_max = 45.0
+scale_amount_min = 1.5
+scale_amount_max = 1.5
+anim_offset_max = 1.0
+
+[node name="TransitionParticleHolder" type="Node2D" parent="."]
+z_index = 1000
+z_as_relative = false
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="TransitionParticleHolder"]
+y_sort_enabled = true
+material = SubResource("CanvasItemMaterial_a03gj")
+position = Vector2(320, -40)
+emitting = false
+amount = 450
+lifetime = 1.3
+one_shot = true
+texture = ExtResource("19_le8v2")
+emission_shape = 3
+emission_rect_extents = Vector2(340, 1)
+direction = Vector2(0, 1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 350.0
+initial_velocity_max = 350.0
+angle_min = -90.0
+angle_max = 90.0
+scale_amount_min = 1.5
+scale_amount_max = 1.5
+anim_offset_max = 1.0
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="TransitionParticleHolder"]
+z_index = 1
+material = SubResource("CanvasItemMaterial_rlxis")
+position = Vector2(320, -40)
+emitting = false
+amount = 300
+lifetime = 1.8
+one_shot = true
+texture = ExtResource("21_0b2uc")
+emission_shape = 3
+emission_rect_extents = Vector2(340, 1)
+direction = Vector2(0, 1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 350.0
+initial_velocity_max = 350.0
+angle_min = -90.0
+angle_max = 90.0
+scale_amount_min = 1.5
+scale_amount_max = 1.5
+anim_offset_max = 1.0
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="TransitionParticleHolder"]
+z_index = 2
+material = SubResource("CanvasItemMaterial_neij4")
+position = Vector2(320, -40)
+emitting = false
+amount = 300
+lifetime = 2.3
+one_shot = true
+texture = ExtResource("20_vis0i")
+emission_shape = 3
+emission_rect_extents = Vector2(340, 1)
+direction = Vector2(0, 1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 350.0
+initial_velocity_max = 350.0
+angle_min = -90.0
+angle_max = 90.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+anim_offset_max = 1.0
+
+[node name="CPUParticles2D4" type="CPUParticles2D" parent="TransitionParticleHolder"]
+z_index = 3
+material = SubResource("CanvasItemMaterial_suodh")
+position = Vector2(320, -40)
+emitting = false
+amount = 300
+lifetime = 2.8
+one_shot = true
+texture = ExtResource("22_w2hm6")
+emission_shape = 3
+emission_rect_extents = Vector2(340, 1)
+direction = Vector2(0, 1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 350.0
+initial_velocity_max = 350.0
+angle_min = -90.0
+angle_max = 90.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+anim_offset_max = 1.0

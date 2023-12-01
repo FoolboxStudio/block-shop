@@ -1,0 +1,119 @@
+[gd_scene load_steps=8 format=3 uid="uid://bg81c2v0xof2x"]
+
+[ext_resource type="Texture2D" uid="uid://lvietqsreubp" path="res://sprites/machine.png" id="1_7rkkh"]
+[ext_resource type="Script" path="res://scenes/machine.gd" id="2_03o86"]
+[ext_resource type="SpriteFrames" uid="uid://b6jw36071ktc7" path="res://sprites/conveyor_belt_sprite_frame.tres" id="3_vdwl3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drp2q"]
+atlas = ExtResource("1_7rkkh")
+region = Rect2(0, 0, 46, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvdya"]
+atlas = ExtResource("1_7rkkh")
+region = Rect2(184, 0, 46, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dekr0"]
+atlas = ExtResource("1_7rkkh")
+region = Rect2(46, 0, 46, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_luxfj"]
+atlas = ExtResource("1_7rkkh")
+region = Rect2(92, 0, 46, 46)
+
+[node name="Machine" type="Sprite2D" groups=["animated"]]
+texture = SubResource("AtlasTexture_drp2q")
+script = ExtResource("2_03o86")
+
+[node name="MachineOutline" type="Sprite2D" parent="."]
+visible = false
+z_index = 6
+z_as_relative = false
+texture = SubResource("AtlasTexture_hvdya")
+
+[node name="MachineSymbol" type="Sprite2D" parent="."]
+modulate = Color(0.172549, 0.164706, 0.27451, 1)
+z_index = 15
+z_as_relative = false
+
+[node name="NorthDoor" type="Node2D" parent="."]
+
+[node name="ConveyorVisual" type="AnimatedSprite2D" parent="NorthDoor"]
+z_index = 12
+z_as_relative = false
+rotation = -1.5708
+sprite_frames = ExtResource("3_vdwl3")
+autoplay = "default"
+
+[node name="DoorVisual" type="Sprite2D" parent="NorthDoor"]
+modulate = Color(0.45098, 0.466667, 0.627451, 1)
+z_index = 10
+z_as_relative = false
+texture = SubResource("AtlasTexture_dekr0")
+
+[node name="Sprite2D" type="Sprite2D" parent="NorthDoor/DoorVisual"]
+z_index = 15
+z_as_relative = false
+texture = SubResource("AtlasTexture_luxfj")
+
+[node name="SouthDoor" type="Node2D" parent="."]
+rotation = 3.14159
+
+[node name="ConveyorVisual" type="AnimatedSprite2D" parent="SouthDoor"]
+z_index = 12
+z_as_relative = false
+rotation = -1.5708
+sprite_frames = ExtResource("3_vdwl3")
+autoplay = "default"
+
+[node name="DoorVisual" type="Sprite2D" parent="SouthDoor"]
+modulate = Color(0.45098, 0.466667, 0.627451, 1)
+z_index = 10
+z_as_relative = false
+texture = SubResource("AtlasTexture_dekr0")
+
+[node name="Sprite2D" type="Sprite2D" parent="SouthDoor/DoorVisual"]
+z_index = 15
+z_as_relative = false
+texture = SubResource("AtlasTexture_luxfj")
+
+[node name="WestDoor" type="Node2D" parent="."]
+rotation = -1.5708
+
+[node name="ConveyorVisual" type="AnimatedSprite2D" parent="WestDoor"]
+z_index = 12
+z_as_relative = false
+rotation = -1.5708
+sprite_frames = ExtResource("3_vdwl3")
+autoplay = "default"
+
+[node name="DoorVisual" type="Sprite2D" parent="WestDoor"]
+modulate = Color(0.45098, 0.466667, 0.627451, 1)
+z_index = 10
+z_as_relative = false
+texture = SubResource("AtlasTexture_dekr0")
+
+[node name="Sprite2D" type="Sprite2D" parent="WestDoor/DoorVisual"]
+z_index = 15
+z_as_relative = false
+texture = SubResource("AtlasTexture_luxfj")
+
+[node name="EastDoor" type="Node2D" parent="."]
+rotation = 1.5708
+
+[node name="ConveyorVisual" type="AnimatedSprite2D" parent="EastDoor"]
+z_index = 12
+z_as_relative = false
+rotation = -1.5708
+sprite_frames = ExtResource("3_vdwl3")
+autoplay = "default"
+
+[node name="DoorVisual" type="Sprite2D" parent="EastDoor"]
+modulate = Color(0.45098, 0.466667, 0.627451, 1)
+z_index = 10
+z_as_relative = false
+texture = SubResource("AtlasTexture_dekr0")
+
+[node name="Sprite2D" type="Sprite2D" parent="EastDoor/DoorVisual"]
+z_index = 15
+z_as_relative = false
+texture = SubResource("AtlasTexture_luxfj")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://h2um6nax0x7h"]
+
+[ext_resource type="Script" path="res://scenes/level_scene.gd" id="1_nbbie"]
+[ext_resource type="Texture2D" uid="uid://corc1nuw4ycle" path="res://sprites/full_screen_640x360.png" id="3_uljf6"]
+
+[node name="LevelScene" type="Node"]
+script = ExtResource("1_nbbie")
+tile_size = Vector2(54, 54)
+tile_amount = Vector2(3, 3)
+metadata/_edit_horizontal_guides_ = []
+
+[node name="Background" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(320, 180)
+texture = ExtResource("3_uljf6")
+
+[node name="1920x1080Camera2D" type="Camera2D" parent="."]
+position = Vector2(320, 180)

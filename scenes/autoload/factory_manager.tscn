@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://yg8bnmfuk75l"]
+
+[ext_resource type="Script" path="res://scenes/autoload/factory_manager.gd" id="1_6hx6c"]
+
+[node name="FactoryManager" type="Node"]
+script = ExtResource("1_6hx6c")
+colors = Array[Color]([Color(1, 1, 1, 1), Color(0, 0, 0, 1)])

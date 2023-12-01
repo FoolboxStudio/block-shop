@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://ckefcatrcrwdb"]
+
+[ext_resource type="Script" path="res://scenes/views/play_menu_view.gd" id="1_insue"]
+[ext_resource type="Texture2D" uid="uid://c5dlm7q7ye3wa" path="res://sprites/tool_menu_button/tool_menu_button18.png" id="2_m4r8x"]
+[ext_resource type="Texture2D" uid="uid://ddpiu3lkr20v1" path="res://sprites/tool_menu_button/tool_menu_button17.png" id="3_nex22"]
+[ext_resource type="Texture2D" uid="uid://cdhhq7rcfg431" path="res://sprites/tool_menu_button/tool_menu_button19.png" id="4_27g2d"]
+[ext_resource type="Texture2D" uid="uid://ru8snk64gw58" path="res://sprites/ui.png" id="13_ai305"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_04sqq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jqwg2"]
+
+[node name="PlayMenuView" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_04sqq")
+script = ExtResource("1_insue")
+start_button_texture = ExtResource("2_m4r8x")
+stop_button_texture = ExtResource("3_nex22")
+speed_up_button_texture = ExtResource("4_27g2d")
+
+[node name="PositionControl" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PositionControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -12.0
+offset_right = 8.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jqwg2")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PositionControl/PanelContainer"]
+layout_mode = 2
+texture = ExtResource("13_ai305")
+region_rect = Rect2(0, 0, 9, 9)
+patch_margin_left = 9
+patch_margin_top = 9
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PositionControl/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="ButtonHolder" type="HBoxContainer" parent="PositionControl/PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/separation = 8

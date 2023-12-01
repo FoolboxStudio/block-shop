@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BuildingData" load_steps=3 format=3 uid="uid://bnlj7lkt7nt14"]
+
+[ext_resource type="Script" path="res://scripts/resources/building_data.gd" id="1_cqb3l"]
+[ext_resource type="Texture2D" uid="uid://vsnul7i8a0e0" path="res://sprites/tool_menu_button/tool_menu_button13.png" id="2_3dmdq"]
+
+[resource]
+script = ExtResource("1_cqb3l")
+building_type = 12
+texture_2d = ExtResource("2_3dmdq")
+keep_original_color = false
+coming_from_amount_allowed = 1
+going_toward_amount_allowed = 3
+no_in_line_inputs = false
+can_be_overwritten = true

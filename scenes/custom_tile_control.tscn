@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://sauyuj0wpxpx"]
+
+[ext_resource type="PackedScene" uid="uid://okretl202af4" path="res://scenes/custom_tile.tscn" id="1_4ctrf"]
+[ext_resource type="Script" path="res://scenes/custom_tile_control.gd" id="1_4d6qd"]
+
+[node name="CustomTileControl" type="Control" node_paths=PackedStringArray("custom_tile")]
+custom_minimum_size = Vector2(54, 54)
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_4d6qd")
+custom_tile = NodePath("CustomTile")
+
+[node name="CustomTile" parent="." instance=ExtResource("1_4ctrf")]
+position = Vector2(27, 27)
